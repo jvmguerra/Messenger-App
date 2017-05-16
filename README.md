@@ -17,6 +17,10 @@ This project implements the following features:
 * Clear distinction between different users in chat using colors and initial letters association
 * TSLint Enabled
 
+## Documentation
+
+The documentation of this project, as well as a code snippet of every component, can be found inside the folder `documentation/`. You can simply open `index.html` on your browser and look through :)
+
 ## Development server
 
 Before running, make sure you have NodeJS installed and you run `npm install` inside the project's directory.
