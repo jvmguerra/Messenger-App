@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <p class="header">
+    Create a new chat
+  </p>
+
+  <div class="group-type">
+    <md-radio-group class="group-type flex  jc-space-around" [(ngModel)]="type" (click)="showType()" >
+      <md-radio-button value="1">
+      Group
+      </md-radio-button>
+      <md-radio-button value="2">
+      Personal
+      </md-radio-button>
+    </md-radio-group>
+  </div>
+
+    <div *ngIf="type == 1" class="col card-content">
+      <md-input-container>
+        <input mdInput placeholder="Group Name" [(ngModel)]="groupName">
+      </md-input-container>
+      <div *ngFor="let user of users">
+        <md-checkbox  [(ngModel)]="group[user.id]">{{user.name}}</md-checkbox>
+      </div>
+    </div>
+
+    <div *ngIf="type == 2" class="card-content">
+      <md-radio-group class="col group-type flex  jc-space-around" [(ngModel)]="selectedUser">
+        <md-radio-button *ngFor="let user of users" [value]="user.id">{{user.name}}</md-radio-button>
+      </md-radio-group>
+    </div>
+
+    <button md-dialog-close md-button class="big-button" (click)="createGroup()" [disabled]="!type" >CREATE CHAT</button>
+</div>

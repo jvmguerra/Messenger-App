@@ -1,0 +1,10 @@
+<div [ngClass]="{'right-position': isUser, 'jc-flex-end': isUser, 'left-position': !isUser}" class="row division">
+  <div *ngIf="isUser" class="bubble">
+    {{message}}
+  </div>
+  <div *ngIf="showUserPic" class="user-picture" [style.background]="sideImage?.color">{{sideImage?.initial | slice:0:1 | uppercase}}</div>
+  <div *ngIf="!showUserPic" class="placeholder-pic"></div>
+  <div *ngIf="!isUser" class="bubble">
+    {{message}}
+  </div>
+</div>

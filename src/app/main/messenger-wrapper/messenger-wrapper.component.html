@@ -1,0 +1,24 @@
+<md-sidenav-container class="window col-l-10 col-m-10 col-s-12 no-gutter">
+  <md-sidenav #sidenav mode="{{navMode}}" opened="true" class="sidenav col col-l-3 col-m-4 col-s-8 box-shadow no-gutter">
+    <app-user-bar (emitRefresh)="refreshPreview()" [user]="user" [userColor]="userColor?.color" class="app-user-barx"></app-user-bar>
+    <div class="scrollable-part">
+      <app-chat-preview *ngFor="let chat of chatGroups" [chat]="chat" (click)="activateChat(chat)"></app-chat-preview>
+    </div>
+  </md-sidenav>
+
+  <div class="chat-content">
+    <div class="chat-header">
+      <app-chat-info-bar (triggerButton)="toggleSidenav()" [members]="usersChatBar" [chatInfo] = "chatInfo"></app-chat-info-bar>
+      <app-div-bar></app-div-bar>
+    </div>
+    
+    <div #scrollMe class="bubble-wrapper" [scrollTop]="scrollMe.scrollHeight">
+      <app-chat-bubble *ngFor="let message of messages | reverse" [message]="message.message" [isUser]="message.isUser" [showUserPic]="message.showPic" [sideImage]="message.sideImage"></app-chat-bubble>
+    </div>
+
+    <div *ngIf="isChatSelected" class="container-send-message">
+      <app-send-message (message)="sendMessage($event)"></app-send-message>
+    </div>
+  </div>
+
+</md-sidenav-container>

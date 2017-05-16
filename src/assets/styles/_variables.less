@@ -1,0 +1,54 @@
+// Workaround for LESS lack of support to /deep/
+// https://github.com/less/less.js/issues/2023#issuecomment-43663237
+//
+// use like:
+// @{deep} .someClass {}
+// @{deep} > sometag {}
+@deep: ~'/deep/';
+
+// Fonts
+@font-family: 'Open Sans', sans-serif;
+
+// Breakpoints
+@font-base-size: 10px;
+
+@size-m: 768px;
+@size-l: 1200px;
+
+@media-m: ~"screen and (min-width: @{size-m})";
+@media-l: ~"screen and (min-width: @{size-l})";
+@media-xl: ~"screen and (min-width: 1680px)";
+@media-xxl: ~"screen and (min-width: 1920px)";
+
+// Grid
+// The '- .01' in the width calc is to fix the round that uses 'ceil'
+@grid-s-columns: 12;
+@grid-s-column-width: round(100vw / @grid-s-columns, 2) - .01;
+@grid-s-column-gutter: round(@grid-s-column-width * .45, 2);
+@grid-m-columns: 12;
+@grid-m-column-width: round(100vw / @grid-m-columns, 2) - .01;
+@grid-m-column-gutter: round(@grid-m-column-width * .26, 2);
+@grid-l-columns: 12;
+@grid-l-column-width: round(100vw / @grid-l-columns, 2) - .01;
+@grid-l-column-gutter: round(@grid-l-column-width * .24, 2);
+
+// Colors
+@color-white: #fff;
+@color-bg-white: #ECEFF1;
+@color-black: #000;
+@color-dark-gray: #444;
+@color-medium-gray: #CCC;
+@color-lightest-gray: #EEE;
+@color-light-gray: #CCC;
+@color-graffiti: #333;
+@color-bubble-blue: #55A4DA;
+@color-sea-blue: #39CCCC;
+@color-royal-blue: #001F3F;
+@color-theme-green: #01AB80;
+@color-theme-navy: #255466;
+@color-theme-ocean: #018EAB;
+@color-theme-brown: #995A64;
+@color-theme-salmon: #F3766F;
+@color-theme-red: #E41E26;
+@color-theme-gold: #F5BF3E;
+@color-theme-orange: #F1984E;

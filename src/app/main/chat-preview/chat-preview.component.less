@@ -1,0 +1,28 @@
+@import '../../../assets/styles/_variables';
+
+.user-bar-container {
+    height: 70px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    .preview-text {
+        font-size: 12px;
+        color: @color-dark-gray;
+    }
+
+    .preview-container {
+        flex-grow: 1;
+        margin-right: 4%;
+    }
+}
+
+.user-bar-container:hover:not(.active) {
+    background-color: @color-lightest-gray;
+}
+
+.active {
+    background-color: @color-medium-gray;
+    color: @color-royal-blue;
+    .preview-text {
+        color: @color-royal-blue;
+    }
+}

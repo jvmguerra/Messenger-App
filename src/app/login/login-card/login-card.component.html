@@ -1,0 +1,21 @@
+<app-div-bar class="no-gutter"></app-div-bar>
+<md-card class="example-card">
+  <div *ngIf="isDataAvailable">
+    <md-card-header>
+      <md-card-title>Welcome to the Message App!</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <md-select #el class="spacing" placeholder="User">
+        <md-option *ngFor="let user of users" [value]="user.id">
+        {{ user.name }}
+        </md-option>
+      </md-select>
+    </md-card-content>
+    <md-card-actions [style.margin]="0">
+      <button md-button class="big-button" (click)="loadChat(el.selected.value)">LOGIN</button>
+    </md-card-actions>
+  </div>
+  <div *ngIf="!isDataAvailable">
+    <md-spinner></md-spinner>
+  </div>
+</md-card>

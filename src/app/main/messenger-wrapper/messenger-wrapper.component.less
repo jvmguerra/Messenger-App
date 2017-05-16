@@ -1,0 +1,56 @@
+@import '../../../assets/styles/_base.less';
+
+.window {
+    background-color: @color-white;
+    border-radius: none;
+    height:100vh;
+
+    .sidenav {
+        background-color: @color-white;
+        overflow-y: hidden;
+
+        .scrollable-part {
+            overflow-y: auto;
+            display: block;
+            max-height: 89%;
+        }
+    }
+
+    .chat-content {
+        background-color: @color-bg-white;
+        height: 100%;
+    }
+    
+    @media @media-m {
+        border-radius: 2px;
+        height: 80vh;
+        min-height: 534px;
+    }
+
+    @media @media-l {
+        border-radius: 2px;
+    }
+
+    .container-send-message {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.bubble-wrapper {
+    width: 100%;
+    flex-grow: 1;
+    position: fixed;
+    bottom: 60px;
+    right: 0;
+    z-index: 1;
+    padding-top: 80px;
+    margin-top: 15px;
+    height: 73%;
+    overflow-y: scroll;
+}
+
+.chat-header {
+    position: relative;
+    z-index: 9999;
+}

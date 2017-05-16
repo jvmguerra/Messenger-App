@@ -1,0 +1,6 @@
+<form #messageForm="ngForm">
+  <div class="typer box-shadow">
+    <input class="text-input" type="text" name="inputMessage" [(ngModel)]="inputMessage" placeholder="Type a message" required>
+  </div>
+  <button md-mini-fab class="send-button" (click)="submitMessage()" [disabled]="!messageForm.form.valid && (!inputMessage?.dirty || !inputMessage?.touched)"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+</form>

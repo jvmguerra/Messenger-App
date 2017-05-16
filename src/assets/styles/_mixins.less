@@ -1,0 +1,20 @@
+.generate-grid(@size, @columns, @column-width, @column-gutter, @i: 1) when (@i =< @columns) {
+  @width: @column-width * @i;
+
+  .col-@{size}-@{i} {
+    padding: 0 @column-gutter;
+    width: @width;
+  }
+
+  .col-@{size}-offset-@{i} when (@i < @columns) {
+    margin-left: @width;
+  }
+
+  .generate-grid(@size, @columns, @column-width, @column-gutter, @i + 1);
+}
+
+.media(@width; @rules) {
+  @media screen and (min-width: @width) {
+    @rules();
+  }
+}

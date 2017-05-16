@@ -1,0 +1,10 @@
+<div class="user-bar-container row ac-center" [ngClass]="{'active': chat.isActive}">
+  <div class="user-picture" [style.background]="chat.color">{{chat?.name | slice:0:1 | uppercase}}</div>
+  <div class="row jc-space-between preview-container">
+    <div>
+      <p class="user-name">{{chat?.name | slice:0:19}}{{chat?.name.length < 10 ? '' : '...'}}</p>
+      <!--<p class="preview-text">{{ chat?.message | slice:0:20 }} {{chat?.message.length < 20 ? '' : '...'}}</p>-->
+    </div>
+    <span class="preview-text">{{chat?.lastseen | amDateFormat: 'MM/DD'}}</span>
+  </div>
+</div>

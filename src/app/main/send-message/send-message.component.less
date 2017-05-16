@@ -1,0 +1,44 @@
+@import '../../../assets/styles/_variables.less';
+
+.typer {
+    padding: inherit;
+    margin: 0 auto;
+    display: flex;
+    background-color: #fff;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    align-items: center;
+    border-radius: 40px;
+
+    input {
+        margin: 10px 50px 10px 20px;
+        position: relative;
+        line-height: 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+.send-button {
+    background-color: @color-royal-blue;
+    color: @color-white;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.text-input::-moz-placeholder {
+  color: @color-light-gray;
+}
+
+.text-input:-ms-input-placeholder {
+  color: @color-light-gray;
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: @color-light-gray;
+}

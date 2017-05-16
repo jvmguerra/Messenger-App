@@ -1,0 +1,7 @@
+<div class="user-bar-container row ac-center">
+  <div class="user-picture" [style.background]="userColor || ''" >{{user?.name | slice:0:1 | uppercase}}</div>
+  <span class="user-name">{{user?.name}}</span>
+  <button md-icon-button class="add-button" (click)="openDialog()">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>

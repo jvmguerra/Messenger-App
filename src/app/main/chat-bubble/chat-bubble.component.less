@@ -1,0 +1,37 @@
+@import '../../../assets/styles/_variables.less';
+
+.division {
+    margin-bottom: 5px;
+    .bubble {
+        padding:10px;
+        border-radius: 15px;
+        max-width: 50%;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .user-picture {
+        align-self: flex-start;
+    }
+
+    .placeholder-pic {
+        align-self: center;
+        background-color: rgba(0, 0, 0, 0);
+        width: 45px;
+        height: 45px;
+        margin: 0 4% 0 20px;
+    }
+}
+
+    .left-position {
+        .bubble{
+            background-color: @color-white;
+        }
+    }
+
+    .right-position {
+        .bubble{
+            color: @color-white;
+            background-color: @color-bubble-blue;
+        }
+    }

@@ -1,0 +1,14 @@
+<div class="info-bar-container flex ac-center jc-space-between">
+
+    <button md-icon-button class="button" (click)="toggleSidenav()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div>
+        <div>{{chatInfo?.name}}</div>
+        <div class="users">{{members}}</div>
+    </div>
+
+
+    <div class="user-picture" [style.background]="chatInfo?.color">{{chatInfo?.name | slice:0:1 | uppercase}}</div>
+</div>
